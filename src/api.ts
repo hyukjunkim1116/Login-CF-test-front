@@ -68,7 +68,7 @@ export const logOut = () =>
     .then((response) => response.data);
 
 export const getMe = () =>
-    instance.get(`users/me`).then((response) => response.data);
+    instance.get(`users/me/`).then((response) => response.data);
 
 
 

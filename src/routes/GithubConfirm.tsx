@@ -23,9 +23,9 @@ export default function GithubConfirm() {
     }
 }
 };
-useEffect(() => {
-  confirmLogin();
-}, []);
+  useEffect(() => {
+    confirmLogin();
+  }, []);
   return (
     <VStack justifyContent={"center"} mt={40}>
       <Heading>Processing log in...</Heading>
