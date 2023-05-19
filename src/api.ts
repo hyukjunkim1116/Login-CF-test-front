@@ -38,6 +38,18 @@ export const kakaoLogin = (code: string) =>
       }
     )
     .then((response) => response.status);
+export const googleLogin = (code: string) =>
+  instance
+    .post(
+      `users/google`,
+      { code },
+      {
+        headers: {
+          "X-CSRFToken": Cookie.get("csrftoken") || "",
+        },
+      }
+    )
+    .then((response) => response.status);
 
 export const getMe = () =>
     instance.get(`users/me`).then((response) => response.data);

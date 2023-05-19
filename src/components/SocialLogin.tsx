@@ -1,4 +1,4 @@
-import { FaComment, FaGithub } from "react-icons/fa";
+import { FaComment, FaGithub, FaGoogle } from "react-icons/fa";
 import { Box, Button, Divider, HStack, Text, VStack } from "@chakra-ui/react";
 
 export default function SocialLogin() {
@@ -11,11 +11,20 @@ export default function SocialLogin() {
     client_id: "e8d3c4d44f3084e58e7f",
     scope: "read:user,user:email",
   };
+  const googleParams = {
+    scope:"profile email",
+    redirect_uri:"http://127.0.0.1:3000/social/google",
+    response_type:"code",
+    client_id:"660367536403-rus6dd2kgkqkra03dq1otkutpi6uke22.apps.googleusercontent.com",
+  }
   const kakaoUrl = `https://kauth.kakao.com/oauth/authorize?${new URLSearchParams(
     kakaoParams
   ).toString()}`;
   const githubUrl = `https://github.com/login/oauth/authorize?${new URLSearchParams(
     githubParams
+  ).toString()}`;
+  const googleUrl = `https://accounts.google.com/o/oauth2/v2/auth?${new URLSearchParams(
+    googleParams
   ).toString()}`;
   return (
     <Box mb={4}>
@@ -38,6 +47,9 @@ export default function SocialLogin() {
           colorScheme={"yellow"}
         >
           Continue with Kakao
+        </Button>
+        <Button as="a" href={googleUrl} w="100%" leftIcon={<FaGoogle />}>
+          Continue with Google
         </Button>
       </VStack>
     </Box>
