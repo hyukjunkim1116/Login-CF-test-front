@@ -7,9 +7,10 @@ import {
   } from "@chakra-ui/react";
 import SignUpModal from "../components/SignUpModal";
 import { useQuery ,useMutation} from "@tanstack/react-query";
-import { getMe,logOut } from "../api";
-import {IUser}from "../types.d"
-import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { getMe,logOut,getPhotos } from "../api";
+import {IUser,IRoomPhotoPhoto}from "../types.d"
+import ImageBox from "../components/ImageBox";
 
 export default function Home() {
     const {
@@ -19,7 +20,8 @@ export default function Home() {
       } = useDisclosure();
       const toast = useToast();
     const { isLoading, data } = useQuery<IUser>([`me`], getMe);
-    console.log(data)
+    const { isLoading:photoLoading, data:photoData } = useQuery<IRoomPhotoPhoto[]>([`photo`], getPhotos);
+    console.log(photoData)
     const mutation = useMutation(logOut, {
         onMutate: () => {
           toast({
@@ -49,6 +51,16 @@ export default function Home() {
                 <div>{data?.email}</div>
               </Box>
                 <Button onClick={onLogOut}>Log out</Button>
+                <Button><Link to="/photo">Upload Photo</Link></Button>
+            </Box>
+            <Box>
+            {photoData?.map((photo)=>(
+                <ImageBox
+                pk={photo.pk}
+                description={photo.description}
+                file={photo.file}
+                />
+            ))};
             </Box>
         </Box>
             )

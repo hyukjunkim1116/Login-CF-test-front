@@ -1,5 +1,5 @@
 export interface IRoomPhotoPhoto {
-    pk: string;
+    pk: string|number;
     file: string;
     description: string;
   }

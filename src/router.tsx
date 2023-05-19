@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import Root from "./components/Root";
 import Home from "./routes/Home";
+import UploadPhotos from "./routes/UploadPhotos";
 import GithubConfirm from "./routes/GithubConfirm";
 import KakaoConfirm from "./routes/KakaoConfirm";
 import GoogleConfirm from "./routes/GoogleConfrim";
@@ -13,6 +14,10 @@ const router = createBrowserRouter([
         {
           path: "",
           element: <Home />,
+        },
+        {
+          path: "photo",
+          element: <UploadPhotos />,
         },
         {
         path: "social",
