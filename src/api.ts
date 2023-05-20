@@ -1,7 +1,6 @@
 import Cookie from "js-cookie";
-// import { QueryFunctionContext } from "@tanstack/react-query";
+import { QueryFunctionContext } from "@tanstack/react-query";
 import axios from "axios";
-// import { formatDate } from "./lib/utils";
 export interface ICreatePhotoVariables {
   description: string;
   file: string;
@@ -57,6 +56,8 @@ export const googleLogin = (code: string) =>
       }
     )
     .then((response) => response.status);
+export const getMe = () =>
+    instance.get(`users/me/`).then((response) => response.data);
 
 export const logOut = () =>
   instance
@@ -67,8 +68,7 @@ export const logOut = () =>
     })
     .then((response) => response.data);
 
-export const getMe = () =>
-    instance.get(`users/me/`).then((response) => response.data);
+
 
 
 
