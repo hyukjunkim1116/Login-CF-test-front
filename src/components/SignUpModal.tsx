@@ -7,7 +7,6 @@ import {
     isOpen: boolean;
     onClose: () => void;
   }
-  
   export default function SignUpModal({ isOpen, onClose }: SignUpModalProps) {
     return (
       <Modal onClose={onClose} isOpen={isOpen}>

@@ -10,13 +10,11 @@ import {
 import SignUpModal from "../components/SignUpModal";
 import { useQuery ,useMutation, useQueryClient} from "@tanstack/react-query";
 import { Link } from "react-router-dom";
-import { logOut,getPhotos, getMe } from "../api";
-import {IUser,IRoomPhotoPhoto}from "../types.d"
+import { logOut,getPhotos } from "../api";
+import {IRoomPhotoPhoto}from "../types.d"
 import ImageBox from "../components/ImageBox";
 import useUser from "../lib/useUser";
 import { useRef } from "react";
-import {useCookies} from "react-cookie"
-import Cookies from "js-cookie";
 
 export default function Home() {
   const { userLoading, isLoggedIn, user } = useUser();
@@ -55,13 +53,8 @@ export default function Home() {
     };
     return (
         <Box>
-            <Button onClick={onSignUpOpen} colorScheme={"red"}>
-            Sign up
-            </Button>
-            <SignUpModal isOpen={isSignUpOpen} onClose={onSignUpClose}/>
           {isLoggedIn ? (
             <>
-            
               <Box>
               <Avatar name={user?.name} src={user?.avatar} size={"md"} />
               <Text>{user?.avatar}</Text>
@@ -69,7 +62,6 @@ export default function Home() {
               <Text>{user?.name}</Text>
             </Box>
             <Box>
-              
                 <Button onClick={onLogOut}>Log out</Button>
                 <Button><Link to="/photo">Upload Photo</Link></Button>
             </Box>
@@ -83,8 +75,15 @@ export default function Home() {
                 />
             ))};
             </Box>
-            </>):<></>}
-        </Box>
-            )
+            </>):
+            <Box>
+            <Button onClick={onSignUpOpen} colorScheme={"red"}>
+            Sign up
+            </Button>
+            <SignUpModal isOpen={isSignUpOpen} onClose={onSignUpClose}/>
+            </Box>
+            }
+          </Box>
+          )
         };
     
