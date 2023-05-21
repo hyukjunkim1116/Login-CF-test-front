@@ -55,6 +55,18 @@ export const googleLogin = (code: string) =>
       }
     )
     .then((response) => response.status);
+export const naverLogin = (code: string) =>
+  instance
+    .post(
+      `users/naver`,
+      { code },
+      {
+        headers: {
+          "X-CSRFToken": Cookie.get("csrftoken") || "",
+        },
+      }
+    )
+    .then((response) => response.status);
 export const getMe = () =>
     instance.get(`users/me/`).then((response) => response.data);
 

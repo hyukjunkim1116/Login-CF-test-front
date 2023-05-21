@@ -17,6 +17,12 @@ export default function SocialLogin() {
     response_type:"code",
     client_id:"660367536403-rus6dd2kgkqkra03dq1otkutpi6uke22.apps.googleusercontent.com",
   }
+  const naverParams = {
+    client_id: "PmuFLd8yrGcYQbeXXQkt",
+    response_type: "code",
+    redirect_uri: "https://drinkdrinkdrink.xyz/social/naver",
+  }
+
   const kakaoUrl = `https://kauth.kakao.com/oauth/authorize?${new URLSearchParams(
     kakaoParams
   ).toString()}`;
@@ -25,6 +31,9 @@ export default function SocialLogin() {
   ).toString()}`;
   const googleUrl = `https://accounts.google.com/o/oauth2/v2/auth?${new URLSearchParams(
     googleParams
+  ).toString()}`;
+  const naverUrl = `https://nid.naver.com/oauth2.0/authorize?${new URLSearchParams(
+    naverParams
   ).toString()}`;
   return (
     <Box mb={4}>
@@ -50,6 +59,9 @@ export default function SocialLogin() {
         </Button>
         <Button as="a" href={googleUrl} w="100%" leftIcon={<FaGoogle />}>
           Continue with Google
+        </Button>
+        <Button as="a" href={naverUrl} w="100%" leftIcon={<FaGoogle />}>
+          Continue with Naver
         </Button>
       </VStack>
     </Box>

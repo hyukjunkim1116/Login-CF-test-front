@@ -5,6 +5,7 @@ import UploadPhotos from "./routes/UploadPhotos";
 import GithubConfirm from "./routes/GithubConfirm";
 import KakaoConfirm from "./routes/KakaoConfirm";
 import GoogleConfirm from "./routes/GoogleConfrim";
+import NaverConfirm from "./routes/NaverConfirm";
 
 const router = createBrowserRouter([
     {
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
             {
             path: "google",
             element: <GoogleConfirm />,
+            },
+            {
+            path: "naver",
+            element: <NaverConfirm />,
             },
         ],
         }
