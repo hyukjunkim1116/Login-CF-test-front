@@ -11,7 +11,8 @@ import {
   import { useMutation } from "@tanstack/react-query";
   import { useForm } from "react-hook-form";
   import { createPhoto,getUploadURL ,uploadImage} from "../api";
- 
+import { Link } from "react-router-dom";
+
   interface IForm {
     file: FileList;
   }
@@ -67,6 +68,7 @@ import {
         >
           <Container>
             <Heading textAlign={"center"}>Upload a Photo</Heading>
+            
             <VStack
               as="form"
               onSubmit={handleSubmit(onSubmit)}
@@ -88,8 +90,12 @@ import {
             >
                 Upload photos
               </Button>
+              <Button>
+                <Link to="/">Go Home</Link>
+              </Button>
             </VStack>
           </Container>
+          
         </Box>
     );
   }

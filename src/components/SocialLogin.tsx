@@ -2,6 +2,8 @@ import { FaComment, FaGithub, FaGoogle, FaNapster } from "react-icons/fa";
 import { Box, Button, Divider, HStack, Text, VStack } from "@chakra-ui/react";
 
 export default function SocialLogin() {
+  
+
   let kakaoParams = {
     client_id: "5c41d07be161c81979b0eb05ec72f14b",
     redirect_uri: "https://drinkdrinkdrink.xyz/social/kakao",
@@ -20,7 +22,8 @@ export default function SocialLogin() {
   const naverParams = {
     client_id: "qsnqfsgk2tkIJ1jPGYUP",
     response_type: "code",
-    redirect_uri: "https://drinkdrinkdrink.xyz/social/naver",
+    redirect_uri: "http://127.0.0.1:3000/social/naver",
+    state:"1",
   }
 
   const kakaoUrl = `https://kauth.kakao.com/oauth/authorize?${new URLSearchParams(
