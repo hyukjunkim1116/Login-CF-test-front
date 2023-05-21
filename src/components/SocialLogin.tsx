@@ -1,4 +1,4 @@
-import { FaComment, FaGithub, FaGoogle } from "react-icons/fa";
+import { FaComment, FaGithub, FaGoogle, FaNapster } from "react-icons/fa";
 import { Box, Button, Divider, HStack, Text, VStack } from "@chakra-ui/react";
 
 export default function SocialLogin() {
@@ -60,7 +60,7 @@ export default function SocialLogin() {
         <Button as="a" href={googleUrl} w="100%" leftIcon={<FaGoogle />}>
           Continue with Google
         </Button>
-        <Button as="a" href={naverUrl} w="100%" leftIcon={<FaGoogle />}>
+        <Button as="a" href={naverUrl} w="100%" leftIcon={<FaNapster />}>
           Continue with Naver
         </Button>
       </VStack>
