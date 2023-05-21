@@ -22,7 +22,7 @@ export default function SocialLogin() {
   const naverParams = {
     client_id: "qsnqfsgk2tkIJ1jPGYUP",
     response_type: "code",
-    redirect_uri: "http://127.0.0.1:3000/social/naver",
+    redirect_uri: "https://drinkdrinkdrink.xyz/social/naver",
     state:"1",
   }
 
