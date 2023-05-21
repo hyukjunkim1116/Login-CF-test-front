@@ -2,7 +2,7 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Use skills : react, typescript 
+## Use skills : react, typescript , Chakra-UI
 
 ### feature :
 
