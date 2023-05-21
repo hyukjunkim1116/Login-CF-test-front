@@ -13,7 +13,7 @@ import { Link } from "react-router-dom";
 import { logOut,getPhotos } from "../api";
 import {IRoomPhotoPhoto}from "../types.d"
 import ImageBox from "../components/ImageBox";
-import useUser from "../lib/useUser";
+import useUser from "./useUser";
 import { useRef } from "react";
 
 export default function Home() {
