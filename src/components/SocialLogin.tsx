@@ -4,7 +4,7 @@ import { Box, Button, Divider, HStack, Text, VStack } from "@chakra-ui/react";
 export default function SocialLogin() {
   let kakaoParams = {
     client_id: "5c41d07be161c81979b0eb05ec72f14b",
-    redirect_uri: "http://127.0.0.1:3000/social/kakao",
+    redirect_uri: "https://drinkdrinkdrink.xyz/social/kakao",
     response_type: "code",
   };
   const githubParams = {
@@ -13,7 +13,7 @@ export default function SocialLogin() {
   };
   const googleParams = {
     scope:"profile email",
-    redirect_uri:"http://127.0.0.1:3000/social/google",
+    redirect_uri:"https://drinkdrinkdrink.xyz/social/google",
     response_type:"code",
     client_id:"660367536403-rus6dd2kgkqkra03dq1otkutpi6uke22.apps.googleusercontent.com",
   }
