@@ -18,7 +18,7 @@ export default function SocialLogin() {
     client_id:"660367536403-rus6dd2kgkqkra03dq1otkutpi6uke22.apps.googleusercontent.com",
   }
   const naverParams = {
-    client_id: "PmuFLd8yrGcYQbeXXQkt",
+    client_id: "qsnqfsgk2tkIJ1jPGYUP",
     response_type: "code",
     redirect_uri: "https://drinkdrinkdrink.xyz/social/naver",
   }
